@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>App启动过程 | Xiaoming的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动 冷启动冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。 冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建">
+  <meta name="description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动">
 <meta name="keywords" content="“Android,Groovy,Python”">
 <meta property="og:type" content="article">
 <meta property="og:title" content="App启动过程">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/App启动过程/index.html">
 <meta property="og:site_name" content="Xiaoming的博客">
-<meta property="og:description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动 冷启动冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。 冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建">
+<meta property="og:description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1863168-0b3845cf6a4ef1d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1863168-163d2af02ac6a152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-02-27T03:41:48.756Z">
+<meta property="og:updated_time" content="2019-02-27T03:44:48.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="App启动过程">
-<meta name="twitter:description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动 冷启动冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。 冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建">
+<meta name="twitter:description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1863168-0b3845cf6a4ef1d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Xiaoming的博客" type="application/atom+xml">
@@ -177,7 +177,8 @@
         <h3 id="App启动方式"><a href="#App启动方式" class="headerlink" title="App启动方式"></a>App启动方式</h3><p>如何启动App呢？<br>说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。<br>造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。</p>
 <pre><code>冷启动
 热启动
-</code></pre><h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><p>冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。</p>
+</code></pre><a id="more"></a>
+<h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><p>冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。</p>
 <p>冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建和初始化Application，在创建和初始化它的Launch Activity(onCreate onMesure onLayout,ondraw)，最后展示在界面上</p>
 <h3 id="热启动"><a href="#热启动" class="headerlink" title="热启动"></a>热启动</h3><p>热启动：当启动应用时，后台存在该应用的进程（back键，home键，应用退出，但是没有销毁），从已有的进程中启动</p>
 <p>热启动的特点：从已有的进程中启动，不需要创建和初始化Application ,直接创建和初始化它的Launch Activity</p>
