@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 破解 | Xiaoming的博客</title>
+  <title>App启动过程 | Xiaoming的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="野生Android开发一枚">
+  <meta name="description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动 冷启动冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。 冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建">
 <meta name="keywords" content="“Android,Groovy,Python”">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xiaoming的博客">
-<meta property="og:url" content="http://yoursite.com/tags/破解/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="App启动过程">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/App启动过程/index.html">
 <meta property="og:site_name" content="Xiaoming的博客">
-<meta property="og:description" content="野生Android开发一枚">
+<meta property="og:description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动 冷启动冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。 冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1863168-0b3845cf6a4ef1d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1863168-163d2af02ac6a152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-02-27T03:41:48.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xiaoming的博客">
-<meta name="twitter:description" content="野生Android开发一枚">
+<meta name="twitter:title" content="App启动过程">
+<meta name="twitter:description" content="App启动方式如何启动App呢？说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。 冷启动 热启动 冷启动冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。 冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1863168-0b3845cf6a4ef1d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Xiaoming的博客" type="application/atom+xml">
   
@@ -150,60 +154,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-App启动过程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/飞卢小说App破解/" class="archive-article-date">
-  	<time datetime="2019-02-27T03:05:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/飞卢小说App破解/">飞卢小说App破解(一)</a>
+    <h1 class="article-title" itemprop="name">
+      App启动过程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">破解</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2019/02/27/App启动过程/" class="archive-article-date">
+  	<time datetime="2019-02-27T03:41:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="App启动方式"><a href="#App启动方式" class="headerlink" title="App启动方式"></a>App启动方式</h3><p>如何启动App呢？<br>说到底就是点击屏幕的App图标。但是点击的时候会发现有时进入App首页很快，有时很慢，有时中间还有个白屏。有时中间还有个黑屏。<br>造成这样的情况，是什么原因呢？我们先从App启动的方式开始说起。</p>
+<pre><code>冷启动
+热启动
+</code></pre><h3 id="冷启动"><a href="#冷启动" class="headerlink" title="冷启动"></a>冷启动</h3><p>冷启动：当启动应用时，后台没有该应用的进程，这时系统会重新创建一个新的进程分配给该应用。</p>
+<p>冷启动的特点：因为系统会重新创建一个新的进程分配给它，所以会创建和初始化Application，在创建和初始化它的Launch Activity(onCreate onMesure onLayout,ondraw)，最后展示在界面上</p>
+<h3 id="热启动"><a href="#热启动" class="headerlink" title="热启动"></a>热启动</h3><p>热启动：当启动应用时，后台存在该应用的进程（back键，home键，应用退出，但是没有销毁），从已有的进程中启动</p>
+<p>热启动的特点：从已有的进程中启动，不需要创建和初始化Application ,直接创建和初始化它的Launch Activity</p>
+<p><mark>两者区别：后台进程是否存在相应的进程，创建进程是耗时操作</mark></p>
+<h3 id="应用的启动过程"><a href="#应用的启动过程" class="headerlink" title="应用的启动过程"></a>应用的启动过程</h3><p>主要讲解冷启动的情况（分配进程－&gt;创建和初始化Application-&gt;创建和初始化Launch Activity）</p>
+<p>可以参考<a href="http://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">老罗的Android之旅－Android应用程序启动过程源代码分析</a></p>
+<p>我这里做了下摘要，App启动过程就是：</p>
+<pre><code>整个应用程序的启动过程要执行很多步骤，但是整体来看，主要分为以下五个阶段：
 
-          
+一. Step1 - Step 11：
+Launcher通过Binder进程间通信机制通知ActivityManagerService，
+它要启动一个Activity；
 
+二. Step 12 - Step 16：
+ActivityManagerService通过Binder进程间通信机制通知Launcher进入Paused状态；
+
+三. Step 17 - Step 24：
+Launcher通过Binder进程间通信机制通知ActivityManagerService，它已经准备就绪进入Paused状态，
+于是ActivityManagerService就创建一个新的进程，用来启动一个ActivityThread实例，
+即将要启动的Activity就是在这个ActivityThread实例中运行；
+
+四. Step 25 - Step 27：
+ActivityThread通过Binder进程间通信机制将一个ApplicationThread类型的Binder对象传递给ActivityManagerService，
+以便以后ActivityManagerService能够通过这个Binder对象和它进行通信；
+
+五. Step 28 - Step 35：
+ActivityManagerService通过Binder进程间通信机制通知ActivityThread，
+现在一切准备就绪，它可以真正执行Activity的启动操作了。
+</code></pre><p><mark>有兴趣可以看下源码实现，其实App的启动相当于在Launch 这个应用中点击某个图标进行跳转</mark></p>
+<p><code>ActivityManagerService就创建一个新的进程，用来启动一个ActivityThread实例</code> –可以理解成Zygote进程中fork一个新的进程分配给应用.至于Zygote是什么呢？我还没搞懂呢。推荐两篇博客大家自行理解下<br><a href="http://www.cnblogs.com/innost/archive/2011/01/26/1945769.html" target="_blank" rel="noopener">Android深入浅出之Zygote</a> </p>
+<p><a href="http://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br>后续理解了，会专门讲解下</p>
+<h3 id="如何测量应用启动时间"><a href="#如何测量应用启动时间" class="headerlink" title="如何测量应用启动时间"></a>如何测量应用启动时间</h3><ol>
+<li>可以通过代码打桩，计算启动时间</li>
+<li>可以通过秒表计算(肉眼观察，这个很low)</li>
+</ol>
+<p>最近查到资料，android是有命令可以计算启动时间的</p>
+<pre><code>adb shell am start -W [packageName]/[packageName.launchActivity]
+</code></pre><p>OK，那就拿自己的项目来给大家看看上面两种启动的时间差别</p>
+<p>冷启动：<br><img src="http://upload-images.jianshu.io/upload_images/1863168-0b3845cf6a4ef1d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="冷启动"></p>
+<p>热启动<br><img src="http://upload-images.jianshu.io/upload_images/1863168-163d2af02ac6a152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="热启动"></p>
+<p><mark>两者差距时间很多，只能说明在Application做了很多耗时的操作.并且现在大部分的App启动是冷启动，因为用户的习惯就是不喜欢有这么多后台进程，他们喜欢删掉所有进程</mark></p>
+<p>提醒：<br><mark>避免一些耗时操作在Application中处理，并减少LaunchActivity的View层级，减少View测量绘制时间</mark></p>
+<h3 id="App启动为什么会白屏，黑屏"><a href="#App启动为什么会白屏，黑屏" class="headerlink" title="App启动为什么会白屏，黑屏"></a>App启动为什么会白屏，黑屏</h3><p>回到刚开始的问题，为什么有时打开App会出现白屏/黑屏情况</p>
+<p>先来解释下为什么会出现白屏/黑屏的原因？</p>
+<pre><code>是因为已进入到Activity,但是未加载到布局文件，
+就先显示来windows窗口的背景。
+黑屏/白屏就是显示的windows背景（这个就是theme的设置）
+</code></pre><p>解决方案：</p>
+<pre><code>1.为 Theme 设置背景图；
+(会给人一种快速加载的感觉)
+&lt;style name=&quot;Theme.AppStartLoad&quot; parent=&quot;android:Theme&quot;&gt;  
+    &lt;item name=&quot;android:windowBackground&quot;&gt;@drawable/ipod_bg&lt;/item&gt; 
+    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;  
+&lt;/style&gt;
+
+2.为 Theme 设置透明属性
+（回给人较慢加载出来感觉，因为需要等布局加载完之后一次性展开）
+&lt;style name=&quot;Theme.AppStartLoadTranslucent&quot; parent=&quot;android:Theme&quot;&gt;  
+    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt; 
+    &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;  
+&lt;/style&gt;
+</code></pre><p>这里不展开了，可以看下这个<a href="http://www.tuicool.com/articles/y2AVnu" target="_blank" rel="noopener">Android开发之解决APP启动白屏或者黑屏闪现的问题</a></p>
+<h3 id="优化冷启动时间的小技巧"><a href="#优化冷启动时间的小技巧" class="headerlink" title="优化冷启动时间的小技巧"></a>优化冷启动时间的小技巧</h3><p>按照刚才说的为什么出现白屏/黑屏原因的解决方案。</p>
+<p>其实可以在给启动的Activity的Theme中背景设置为启动页的图片，然后在等待加载完activtity的布局后，恢复原来的theme</p>
+<p>代码举例：</p>
+<p>在style.xml文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme.Launcher"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:windowBackground"</span>&gt;</span>@drawable/appstart_background</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">       <span class="comment">&lt;!--&lt;item name="android:windowIsTranslucent"&gt;true&lt;/item&gt;--&gt;</span></span></span><br><span class="line"><span class="undefined">   </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在AndroidManifest.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".AppStartActivity"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme.Launcher"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">              <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>AppStartActivity.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppStartActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        setContentView(R.layout.activity_appstart);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的@drawable/appstart_background就是启动页的默认背景。亲测，可用</p>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a href="http://www.cnblogs.com/xunzhi/p/5794793.html" target="_blank" rel="noopener">android 性能优化 – 启动过程 冷启动 热启动</a></p>
+<p><a href="http://blog.csdn.net/addisonko/article/details/51207772" target="_blank" rel="noopener">Android 冷启动 热启动 测试</a></p>
+<p><a href="http://blog.csdn.net/z1074971432/article/details/10533735" target="_blank" rel="noopener">消除 activity 启动时白屏、黑屏问题</a></p>
+<p><a href="http://www.tuicool.com/articles/y2AVnu" target="_blank" rel="noopener">Android开发之解决APP启动白屏或者黑屏闪现的问题</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/27/App启动过程/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/02/27/Android-JNI相关开发/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android JNI相关开发
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/02/27/Android代码静态检查工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android代码静态检查工具</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +393,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
