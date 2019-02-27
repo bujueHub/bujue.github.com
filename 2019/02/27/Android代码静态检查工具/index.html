@@ -6,20 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Xiaoming的博客</title>
+  <title>Android代码静态检查工具 | Xiaoming的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="keywords" content="“Android,Groovy,Python”">
+  <meta name="description" content="前言随着我司的业务功能不断迭代，项目中偶尔会出现一些不严谨的代码。如魔法数字，变量未判空，变量命名不符合规范等，这些都有可能引起App闪退问题。 但是这些在正常的CodeReview中很难发现，因此我们用了Android的静态代码检查工具,还有自定义的Lint检查(自定义Lint这里先不介绍，后续会有文章介绍这个) Android的静态检查工具 1.CheckStyles(代码格式和规范检查工具)">
+<meta name="keywords" content="Android,静态检查">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/02/26/hello-world/index.html">
+<meta property="og:title" content="Android代码静态检查工具">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/Android代码静态检查工具/index.html">
 <meta property="og:site_name" content="Xiaoming的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="前言随着我司的业务功能不断迭代，项目中偶尔会出现一些不严谨的代码。如魔法数字，变量未判空，变量命名不符合规范等，这些都有可能引起App闪退问题。 但是这些在正常的CodeReview中很难发现，因此我们用了Android的静态代码检查工具,还有自定义的Lint检查(自定义Lint这里先不介绍，后续会有文章介绍这个) Android的静态检查工具 1.CheckStyles(代码格式和规范检查工具)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T03:25:42.065Z">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/52610965.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/45979999.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/65901468.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/27451914.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/84537292.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/64042335.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/3039893.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/6877689.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/46004617.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/78440295.jpg">
+<meta property="og:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-5-3/50447884.jpg">
+<meta property="og:updated_time" content="2019-02-27T03:24:47.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Android代码静态检查工具">
+<meta name="twitter:description" content="前言随着我司的业务功能不断迭代，项目中偶尔会出现一些不严谨的代码。如魔法数字，变量未判空，变量命名不符合规范等，这些都有可能引起App闪退问题。 但是这些在正常的CodeReview中很难发现，因此我们用了Android的静态代码检查工具,还有自定义的Lint检查(自定义Lint这里先不介绍，后续会有文章介绍这个) Android的静态检查工具 1.CheckStyles(代码格式和规范检查工具)">
+<meta name="twitter:image" content="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/52610965.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Xiaoming的博客" type="application/atom+xml">
   
@@ -151,35 +163,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android代码静态检查工具" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Android代码静态检查工具
     </h1>
   
 
         
-        <a href="/2019/02/26/hello-world/" class="archive-article-date">
-  	<time datetime="2019-02-26T11:03:18.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+        <a href="/2019/02/27/Android代码静态检查工具/" class="archive-article-date">
+  	<time datetime="2019-02-27T03:14:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>随着我司的业务功能不断迭代，项目中偶尔会出现一些不严谨的代码。如<code>魔法数字</code>，<code>变量未判空</code>，<code>变量命名不符合规范</code>等，这些都有可能引起App闪退问题。</p>
+<p>但是这些在正常的CodeReview中很难发现，因此我们用了Android的静态代码检查工具,还有自定义的Lint检查(自定义Lint这里先不介绍，后续会有文章介绍这个)</p>
+<p>Android的静态检查工具</p>
+<pre><code>1.CheckStyles(代码格式和规范检查工具)
+2.FindBugs(检查字节码，即查找编译后的.class文件中的BUG，可以发现空指针问题)
+3.PMD(检查源码)
+4.Lint(Android Studio推荐的工具，发现BUG和优化的地方)
+</code></pre><a id="more"></a>
+<h3 id="CheckStyles"><a href="#CheckStyles" class="headerlink" title="CheckStyles"></a>CheckStyles</h3><p>检查Java源文件的代码格式和规范，可以使用默认，也可以自定义检查规则。我司这边代码格式是按照Google官方推荐的。</p>
+<p>检测范围</p>
+<pre><code>注解
+javadoc注释
+命名规范
+文件头
+导入包规范
+尺寸设置
+空格
+正则表达式
+修饰符
+代码块
+编码问题
+类设计问题
+重复、度量以及一些杂项
+</code></pre><p>CheckSytle的安装可以通过Plugin进行安装CheckStyle-IDEA插件<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/52610965.jpg" alt><br>具体使用可以自行百度</p>
+<p>我们这边是根据gradle的配置运行的，如下</p>
+<pre><code>apply plugin: &apos;checkstyle&apos;
+
+task checkstyle(type: Checkstyle) {
+    //自定义规则
+    configFile file(&quot;$configDir/checkstyle/checkstyle.xml&quot;)
+    // 自定义的规则
+    configProperties.checkstyleSuppressionsPath = file(&quot;$configDir/checkstyle/suppressions.xml&quot;).absolutePath
+    source &apos;src&apos;
+    include &apos;**/*.java&apos;
+    exclude &apos;**/gen/**&apos;
+    classpath = files()
+}
+</code></pre><blockquote>
+<p>关于checkstyles的检查规则文件,可以参照以下链接</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/yuanjw2014/article/details/52851485" target="_blank" rel="noopener">gradle Check配置</a></p>
+<p><a href="https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml" target="_blank" rel="noopener">github上的checkstyles</a></p>
+<p>执行<code>gradle checkstyle</code>命令之后会生成在/build/report/checkstyles下面</p>
+<p><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/45979999.jpg" alt></p>
+<blockquote>
+<p>这里的错误是变量命名方式不对，前面没有加上’m’,if后面没有加空格</p>
+</blockquote>
+<h4 id="其他代码格式和规范检查工具"><a href="#其他代码格式和规范检查工具" class="headerlink" title="其他代码格式和规范检查工具"></a>其他代码格式和规范检查工具</h4><p>阿里推出的<a href="http://oz35srk4e.bkt.clouddn.com/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%E7%BB%88%E6%9E%81%E7%89%88v1.3.0.pdf" target="_blank" rel="noopener">Java代码规范</a><br><a href="https://blog.csdn.net/leeyhcoding/article/details/79413532" target="_blank" rel="noopener">Android开发规范</a></p>
+<p>在此基础上2017年10月14日杭州云栖大会推出了Idea插件<a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">p3c插件</a></p>
+<h3 id="PMD"><a href="#PMD" class="headerlink" title="PMD"></a>PMD</h3><p>检查源码的代码漏洞</p>
+<p>检测范围：</p>
+<pre><code>可能的bug——空的try/catch/finally/switch块。
+无用代码(Dead code)：无用的本地变量，方法参数和私有方法。
+空的if/while语句。
+过度复杂的表达式——不必要的if语句，本来可以用while循环但是却用了for循环。
+可优化的代码：浪费性能的String/StringBuffer的使用。
+</code></pre><p>PMD的安装可以通过Plugin进行安装CheckStyle-IDEA插件<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/65901468.jpg" alt><br>具体使用可以自行百度</p>
+<p>这里的gradle配置</p>
+<pre><code>apply plugin: &apos;pmd&apos;
+
+task pmd(type: Pmd) {
+    //忽略失败，如果检测到bug，task会执行失败，这里设置true会让task继续执行
+    ignoreFailures = true
+    //filter路径
+    ruleSetFiles = files(&quot;$configDir/pmd/pmd-ruleset.xml&quot;)
+    ruleSets = []
+
+    source &apos;src&apos;
+    include &apos;**/*.java&apos;
+    exclude &apos;**/gen/**&apos;
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        xml {
+            destination &quot;$reportsDir/pmd/pmd.xml&quot;
+        }
+        html {
+            destination &quot;$reportsDir/pmd/pmd.html&quot;
+        }
+    }
+}
+</code></pre><p>执行 <code>gradle pmd</code>命令，就会在/build/reports/pmd/生成<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/27451914.jpg" alt></p>
+<p>上图的问题</p>
+<pre><code>if(a == 1)
+    println &quot;true&quot;
+</code></pre><p>这种格式需要加上大括号；还有无效引用需要去除；还有避免输出e.printStackTrace();</p>
+<h3 id="FindBugs重点"><a href="#FindBugs重点" class="headerlink" title="FindBugs重点"></a>FindBugs<code>重点</code></h3><p>检查bytecode的代码漏洞，即编译后的.class文件中的错误，可以查找出空指针等问题 </p>
+<p>检测范围：</p>
+<pre><code>常见代码错误，序列化错误
+可能导致错误的代码，如空指针引用
+国际化相关问题：如错误的字符串转换
+可能受到的恶意攻击，如访问权限修饰符的定义等
+多线程的正确性：如多线程编程时常见的同步，线程调度问题。
+运行时性能问题：如由变量定义，方法调用导致的代码低效问题
+</code></pre><p>FindBugs可以通过Plugin搜索FindBugs-IDEA<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/84537292.jpg" alt><br>然后点击控制台的FindBugs-IDEA,就可以执行<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/64042335.jpg" alt></p>
+<p>具体看下控制台输出的错误级别<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/3039893.jpg" alt></p>
+<p>API： <a href="http://findbugs.sourceforge.net/api/index.html" target="_blank" rel="noopener">http://findbugs.sourceforge.net/api/index.html</a></p>
+<p>技术手册： <a href="http://findbugs.sourceforge.net/manual/index.html" target="_blank" rel="noopener">http://findbugs.sourceforge.net/manual/index.html</a></p>
+<p>更多请参见官网： <a href="http://findbugs.sourceforge.net/bugDescriptions.html" target="_blank" rel="noopener">http://findbugs.sourceforge.net/bugDescriptions.html</a></p>
+<p>Gradle的配置如下</p>
+<pre><code>apply plugin: &apos;findbugs&apos;
+
+task findbugs(type: FindBugs, dependsOn: &quot;assembleDebug&quot;) {
+    //忽略失败，如果检测到bug，task会执行失败，这里设置true会让task继续执行
+    ignoreFailures = true
+    //分析等级：min  default   max
+    effort = &quot;max&quot;
+    //检测bug的等级：low   medium  high，等级越高检测越严格
+    reportLevel = &quot;medium&quot;
+    //exclude Filter路径
+    excludeFilter = new File(&quot;$configDir/findbugs/findbugs-filter.xml&quot;)
+    //检测二进制文件路径
+    classes = files(&quot;build/intermediates/classes&quot;)
+
+    //匹配检测的文件名
+    source &apos;src&apos;
+    include &apos;**/*.java&apos;
+    exclude &apos;**/gen/**&apos;
+
+    classpath = files()
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        //配置检查报告输出路径
+        xml {
+            destination &quot;$reportsDir/findbugs/findbugs.xml&quot;
+        }
+        html {
+            destination &quot;$reportsDir/findbugs/findbugs.html&quot;
+        }
+    }
+}
+</code></pre><p>执行 gradle findbugs就可以<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/6877689.jpg" alt><br>跟idea插件运行的是一致的</p>
+<blockquote>
+<p>重点关注下Correctness和Dodgy,可以的话所有错误都review下</p>
+</blockquote>
+<h3 id="Lint"><a href="#Lint" class="headerlink" title="Lint:"></a>Lint:</h3><p>Lint 是Android Studio 提供的 代码扫描分析工具，它可以帮助我们发现代码结构/质量问题，同时提供一些解决方案，而且这个过程不需要我们手写测试用例。</p>
+<p>检测范围：</p>
+<pre><code>Correctness：不够完美的编码，比如硬编码、使用过时 API 等
+Performance：对性能有影响的编码，比如：静态引用，循环引用等
+Internationalization：国际化，直接使用汉字，没有使用资源引用等
+Security：不安全的编码，比如在 WebView 中允许使用     JavaScriptInterface 等
+</code></pre><p>通过Lint是可以去除无用的资源的</p>
+<p>可以使用Android Studio内置的Lint,使用路径工具栏 -&gt; Analyze -&gt; Inspect Code…</p>
+<p><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/46004617.jpg" alt></p>
+<p>或者配置gradle配置</p>
+<pre><code>android{
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        htmlReport true
+        htmlOutput file(&quot;$reportsDir/lint/lint-results-    rpb.html&quot;)
+            xmlReport false
+            xmlOutput file(&quot;$reportsDir/lint/lint-results-    rpb.xml&quot;)
+            quiet true
+        }
+    }
+</code></pre><p>执行完gradle lint可以在/build/reports/lint/目录下<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-4-28/78440295.jpg" alt></p>
+<hr>
+<pre><code>// Add findbugs, lint to the check task.
+// 执行&apos;gradle check&apos;,可以运行lint,findbugs,pmd,生成/build/reports/目录下
+check.dependsOn &apos;checkstyle&apos;,&apos;findbugs&apos;,&apos;lint&apos;,&apos;pmd&apos;
+</code></pre><p>可以通过gradle check命令都执行下，集成了checkstyle,findbugs.lint,pmd</p>
+<p>前面4者之间的区别<br><img src="http://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/18-5-3/50447884.jpg" alt></p>
+<p>延伸点<br><a href="https://juejin.im/entry/5a54bdab6fb9a01c982c7338" target="_blank" rel="noopener">Git Commit Hook检查</a></p>
+<h3 id="自定义Lint"><a href="#自定义Lint" class="headerlink" title="自定义Lint"></a>自定义Lint</h3><p>由于上述的检查工具只能对代码进行常规检查，后面我司在此基础上增加了自定义Lint规则,主要是为了推进客户端部门的代码规范。规则具体如下：</p>
+<pre><code>1.Toast方法，建议使用基础组提供的Toast工具
+2.Log、System.out.println、System.err.println打印，使用基础组提供的Log
+3.检查New Messsage，提示使用Message.Obtain/handler.obtainMessage
+4.检查HasMap&lt;Integer,E&gt;,建议使用使用SparseArray替代HashMap&lt;Integer,E&gt;
+5.检查图片尺寸，超过300KB，进行提醒压缩或重新设计
+6.检查Java文件中是否存在中文硬编码
+7.检查New Thread,建议使用基础组提供的TreadTool工具
+8.TODO检查
+9.Map.keySet使用,替换为entrySet
+10.Manifest文件是否缺少Launch Activity
+11.Intent putExtra中的key是否为写死，应设置为EXTRA_KEY_&lt;name&gt;
+12.Catch异常是否有NullPointer/IndexOutOfBounds
+13.Activity是否直接继承与Activity/AppCompactActivity，应该为BaseActivity    
+14.枚举检查
+</code></pre><h3 id="支持多语言的检查工具-Infer"><a href="#支持多语言的检查工具-Infer" class="headerlink" title="支持多语言的检查工具-Infer"></a>支持多语言的检查工具-Infer</h3><p>支持的语言有Java、Objective-C、C和C++; 对Android和Java代码可以发现null pointer exceptions和resource leaks等;对iOS、C和C++代码可以发现memory leak等。</p>
+<p><a href="https://blog.csdn.net/neven7/article/details/53455621" target="_blank" rel="noopener">Infer实践</a><br>有空大家可以研究下</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://blog.csdn.net/omnispace/article/details/70209955" target="_blank" rel="noopener">Android 代码优化工具</a></p>
+<p><a href="https://github.com/vincentbrison/vb-android-app-quality" target="_blank" rel="noopener">github开源代码检查工具</a></p>
+<p><a href="https://blog.csdn.net/neven7/article/details/53455621" target="_blank" rel="noopener">Infer实践</a></p>
+<p><a href="https://blog.csdn.net/aya19880214/article/details/41958445" target="_blank" rel="noopener">Findbugs常见错误</a></p>
+<p><a href="https://blog.csdn.net/flamezyg/article/details/7049645" target="_blank" rel="noopener">Findbugs是一个静态分析工具</a></p>
+<p><a href="https://juejin.im/entry/5a54bdab6fb9a01c982c7338" target="_blank" rel="noopener">Git Commit Hook检查</a></p>
+<p><a href="https://tech.meituan.com/android_custom_lint.html" target="_blank" rel="noopener">美团Lint实践</a></p>
+<p><a href="http://www.paincker.com/android-lint-2-implements" target="_blank" rel="noopener">Android Lint：自定义Lint调试与开发</a></p>
 
       
 
@@ -188,6 +383,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">静态检查</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -238,7 +448,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/26/hello-world/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/27/Android代码静态检查工具/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -252,15 +462,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/27/飞卢小说App破解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          飞卢小说App破解(一)
-        
-      </div>
-    </a>
   
+    <a href="/2019/02/27/飞卢小说App破解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">飞卢小说App破解(一)</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

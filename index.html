@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Xiaoming的博客">
 <meta property="og:description" content="野生Android开发一枚">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xiaoming的博客">
 <meta name="twitter:description" content="野生Android开发一枚">
@@ -152,19 +152,104 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-pag飞卢小说App破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Android代码静态检查工具" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/pag飞卢小说App破解/">飞卢小说App破解(一)</a>
+      <a class="article-title" href="/2019/02/27/Android代码静态检查工具/">Android代码静态检查工具</a>
     </h1>
   
 
         
-        <a href="/2019/02/27/pag飞卢小说App破解/" class="archive-article-date">
+        <a href="/2019/02/27/Android代码静态检查工具/" class="archive-article-date">
+  	<time datetime="2019-02-27T03:14:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>随着我司的业务功能不断迭代，项目中偶尔会出现一些不严谨的代码。如<code>魔法数字</code>，<code>变量未判空</code>，<code>变量命名不符合规范</code>等，这些都有可能引起App闪退问题。</p>
+<p>但是这些在正常的CodeReview中很难发现，因此我们用了Android的静态代码检查工具,还有自定义的Lint检查(自定义Lint这里先不介绍，后续会有文章介绍这个)</p>
+<p>Android的静态检查工具</p>
+<pre><code>1.CheckStyles(代码格式和规范检查工具)
+2.FindBugs(检查字节码，即查找编译后的.class文件中的BUG，可以发现空指针问题)
+3.PMD(检查源码)
+4.Lint(Android Studio推荐的工具，发现BUG和优化的地方)
+</code></pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">静态检查</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/27/Android代码静态检查工具/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-飞卢小说App破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/飞卢小说App破解/">飞卢小说App破解(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/27/飞卢小说App破解/" class="archive-article-date">
   	<time datetime="2019-02-27T03:05:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
 </a>
         
@@ -172,39 +257,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="飞卢小说App破解"><a href="#飞卢小说App破解" class="headerlink" title="飞卢小说App破解"></a>飞卢小说App破解</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>想实现一个支持多渠道的小说App,因此对该小说App进行分析获取它的接口调用方式<br>该App详情页截图：<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-162300%402x.png" alt="详情页截图"></p>
-<h2 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h2><p>Charles抓取飞卢详情页面的接口<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-145039%402x.png" alt="charles抓包"></p>
-<blockquote>
-<p>发现该小说App的域名是一个固定IP（试过几次退出登陆发现每次IP不一样，猜测是客户端写死的或者服务端下发，应该是防止域名被劫持吧）</p>
-</blockquote>
-<blockquote>
-<p>上传的参数是一堆乱码，token也是乱码，<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-151735%402x.png" alt="token"></p>
-</blockquote>
-<p>一般末尾是‘=’，应该是base64编码，<code>解密失败</code><br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-152053%402x.png" alt="base64解密"></p>
-<blockquote>
-<p>返回内容居然是XML，author_name居然也是乱码，猜测是base64编码，使用站长工具Base64解密<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-151401%402x.png" alt="base64解密"></p>
-</blockquote>
-<p>感觉该App对数据加密做的很严谨，怪不得市场没有破解版</p>
-<p>现在模拟它的请求只要破解它的token和参数就可以了(至于收费内容暂时不考虑)</p>
-<h2 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h2><p>使用Android Studio打开该App,看到tencent_stub,应该是做个乐固加固了。<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-152451.png" alt="App"></p>
-<h3 id="开始反编译"><a href="#开始反编译" class="headerlink" title="开始反编译"></a>开始反编译</h3><p>Mac上使用<a href="https://github.com/Jermic/Android-Crack-Tool" target="_blank" rel="noopener">Android CrackTool</a>进行反编译处理<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-152831%402x.png" alt="Android CrackTool"><br>反编译结果的确是乐固加固<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-153000%402x.png" alt="结果"></p>
-<h3 id="加固包反编译"><a href="#加固包反编译" class="headerlink" title="加固包反编译"></a>加固包反编译</h3><p>那开始对这个加固包进行反编译<br>参照这个文档<a href="https://zhuanlan.zhihu.com/p/45591754" target="_blank" rel="noopener">Android APK脱壳–腾讯乐固、360加固一键脱壳</a></p>
-<blockquote>
-<p>使用脱壳工具FDex2</p>
-</blockquote>
-<blockquote>
-<p>VirtualXposed：无需root手机即可使用xp框架。</p>
-</blockquote>
-<h3 id="dex进行dex2jar"><a href="#dex进行dex2jar" class="headerlink" title="dex进行dex2jar"></a>dex进行dex2jar</h3><p>这个步骤可以用Android Crack Tool上执行，执行成功之后，使用jdgui打开<br>搜索关键字<code>Xml4Android_relevantPage</code>，获取详情页<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-161239%402x.png" alt="详情页"></p>
-<p>刷新详情页发现Logcat中有日志<br><img src="https://xiaoming-work-image.oss-cn-beijing.aliyuncs.com/picture/WX20190226-161143.png" alt><br>日志中有<code>contetn 原文</code>进行搜索，发现token和参数加密都是native实现的RSA加密，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">public &lt;T extends BaseModel&gt; T a(Object paramObject, String paramString1, UserInfoDto paramUserInfoDto, String paramString2, b&lt;T&gt; paramb)</span><br><span class="line"> &#123;</span><br><span class="line">   try</span><br><span class="line">   &#123;</span><br><span class="line">     paramString1 = paramString1.split(&quot;\\?&quot;);</span><br><span class="line">     String str2 = paramString1[1];</span><br><span class="line">     String str1 = a(paramString1[0]);</span><br><span class="line">     paramString1 = new java/lang/StringBuilder;</span><br><span class="line">     paramString1.&lt;init&gt;();</span><br><span class="line">     paramString1.append(str1);</span><br><span class="line">     paramString1.append(&quot;?appversion=&quot;);</span><br><span class="line">     paramString1.append(AppUtils.getAppversion());</span><br><span class="line">     paramString1.append(&quot;&amp;Type=Android&quot;);</span><br><span class="line">     paramString1 = paramString1.toString();</span><br><span class="line">     str1 = paramString1;</span><br><span class="line">     if (!TextUtils.isEmpty(paramString1))</span><br><span class="line">     &#123;</span><br><span class="line">       str1 = paramString1;</span><br><span class="line">       if (paramString1.contains(&quot;http://client4ip&quot;)) &#123;</span><br><span class="line">         str1 = paramString1.replace(&quot;http://client4ip&quot;, &quot;https://client4ip&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     if (!TextUtils.isEmpty(paramString2))</span><br><span class="line">     &#123;</span><br><span class="line">       paramString1 = paramb.d(paramString2);</span><br><span class="line">     &#125;</span><br><span class="line">     else</span><br><span class="line">     &#123;</span><br><span class="line">       if (!TextUtils.isEmpty(paramUserInfoDto.getUsername())) &#123;</span><br><span class="line">         paramUserInfoDto.setUsername(paramUserInfoDto.getUsername().toLowerCase());</span><br><span class="line">       &#125;</span><br><span class="line">       if (!TextUtils.isEmpty(paramUserInfoDto.getPassword())) &#123;</span><br><span class="line">         paramUserInfoDto.setPassword(paramUserInfoDto.getPassword().toLowerCase());</span><br><span class="line">       &#125;</span><br><span class="line">       if (!TextUtils.isEmpty(paramUserInfoDto.getVerifyCode())) &#123;</span><br><span class="line">         paramUserInfoDto.setVerifyCode(paramUserInfoDto.getVerifyCode().toLowerCase());</span><br><span class="line">       &#125;</span><br><span class="line">       if (!TextUtils.isEmpty(paramUserInfoDto.getUsername()))</span><br><span class="line">       &#123;</span><br><span class="line">         paramString2 = paramb.a(paramUserInfoDto);</span><br><span class="line">         paramString1 = paramb.d(paramString2);</span><br><span class="line">       &#125;</span><br><span class="line">       else</span><br><span class="line">       &#123;</span><br><span class="line">         paramString1 = new java/lang/StringBuilder;</span><br><span class="line">         paramString1.&lt;init&gt;();</span><br><span class="line">         paramString1.append(System.currentTimeMillis());</span><br><span class="line">         paramString1.append(&quot;&quot;);</span><br><span class="line">         paramString2 = MD5.MD5(paramString1.toString());</span><br><span class="line">         paramString1 = paramb.d(paramString2);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     paramUserInfoDto = m.a().b(&quot;SP_UID&quot;);</span><br><span class="line">     if (!TextUtils.isEmpty(m.a().b(&quot;username&quot;))) &#123;</span><br><span class="line">       paramUserInfoDto = m.a().b(&quot;username&quot;);</span><br><span class="line">     &#125;</span><br><span class="line">     Object localObject = paramUserInfoDto;</span><br><span class="line">     if (TextUtils.isEmpty(paramUserInfoDto))</span><br><span class="line">     &#123;</span><br><span class="line">       localObject = j.a();</span><br><span class="line">       m.a().a(&quot;SP_UID&quot;, (String)localObject);</span><br><span class="line">     &#125;</span><br><span class="line">     paramUserInfoDto = new java/lang/StringBuilder;</span><br><span class="line">     paramUserInfoDto.&lt;init&gt;();</span><br><span class="line">     paramUserInfoDto.append(str2);</span><br><span class="line">     paramUserInfoDto.append(&quot;&amp;uuid=&quot;);</span><br><span class="line">     paramUserInfoDto.append((String)localObject);</span><br><span class="line">     localObject = paramUserInfoDto.toString();</span><br><span class="line">     paramUserInfoDto = (UserInfoDto)localObject;</span><br><span class="line">     if (!TextUtils.isEmpty((CharSequence)localObject))</span><br><span class="line">     &#123;</span><br><span class="line">       paramUserInfoDto = (UserInfoDto)localObject;</span><br><span class="line">       if (!((String)localObject).contains(&quot;time=&quot;))</span><br><span class="line">       &#123;</span><br><span class="line">         paramUserInfoDto = new java/lang/StringBuilder;</span><br><span class="line">         paramUserInfoDto.&lt;init&gt;();</span><br><span class="line">         paramUserInfoDto.append((String)localObject);</span><br><span class="line">         paramUserInfoDto.append(&quot;&amp;time=&quot;);</span><br><span class="line">         paramUserInfoDto.append(URLEncoder.encode(TimeUtils.getNowString(), &quot;gb2312&quot;));</span><br><span class="line">         paramUserInfoDto = paramUserInfoDto.toString();</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     localObject = paramUserInfoDto;</span><br><span class="line">     if (!TextUtils.isEmpty(paramUserInfoDto))</span><br><span class="line">     &#123;</span><br><span class="line">       localObject = paramUserInfoDto;</span><br><span class="line">       if (!paramUserInfoDto.contains(&quot;appversion=&quot;))</span><br><span class="line">       &#123;</span><br><span class="line">         localObject = new java/lang/StringBuilder;</span><br><span class="line">         ((StringBuilder)localObject).&lt;init&gt;();</span><br><span class="line">         ((StringBuilder)localObject).append(paramUserInfoDto);</span><br><span class="line">         ((StringBuilder)localObject).append(&quot;&amp;appversion=&quot;);</span><br><span class="line">         ((StringBuilder)localObject).append(AppUtils.getAppversion());</span><br><span class="line">         ((StringBuilder)localObject).append(&quot;&amp;Type=Android&quot;);</span><br><span class="line">         localObject = ((StringBuilder)localObject).toString();</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     paramUserInfoDto = new java/lang/StringBuilder;</span><br><span class="line">     paramUserInfoDto.&lt;init&gt;();</span><br><span class="line">     paramUserInfoDto.append(&quot;content 原文 &quot;);</span><br><span class="line">     paramUserInfoDto.append((String)localObject);</span><br><span class="line">     g.a(new Object[] &#123; paramUserInfoDto.toString() &#125;);</span><br><span class="line">     paramUserInfoDto = paramb.a((String)localObject, paramString2);</span><br><span class="line">     paramString2 = new com/lzy/okgo/model/HttpParams;</span><br><span class="line">     paramString2.&lt;init&gt;();</span><br><span class="line">     paramString2.put(&quot;&quot;, paramUserInfoDto, new boolean[0]);</span><br><span class="line">     paramObject = ((PostRequest)((PostRequest)((PostRequest)((PostRequest)((PostRequest)com.lzy.okgo.a.b(str1).tag(paramObject)).headers(&quot;token&quot;, paramString1)).headers(&quot;mobileType&quot;, &quot;Android&quot;)).headers(&quot;appversion&quot;, AppUtils.getAppversion())).params(paramString2)).execute();</span><br><span class="line">     if (paramObject == null) &#123;</span><br><span class="line">       return null;</span><br><span class="line">     &#125;</span><br><span class="line">     if (((Response)paramObject).isSuccessful())</span><br><span class="line">     &#123;</span><br><span class="line">       paramUserInfoDto = ((Response)paramObject).body().byteStream();</span><br><span class="line">       paramObject = new java/io/BufferedReader;</span><br><span class="line">       paramString1 = new java/io/InputStreamReader;</span><br><span class="line">       paramString1.&lt;init&gt;(paramUserInfoDto, &quot;gb2312&quot;);</span><br><span class="line">       ((BufferedReader)paramObject).&lt;init&gt;(paramString1);</span><br><span class="line">       paramUserInfoDto = new java/lang/StringBuffer;</span><br><span class="line">       paramUserInfoDto.&lt;init&gt;();</span><br><span class="line">       for (;;)</span><br><span class="line">       &#123;</span><br><span class="line">         paramString1 = ((BufferedReader)paramObject).readLine();</span><br><span class="line">         if (paramString1 == null) &#123;</span><br><span class="line">           break;</span><br><span class="line">         &#125;</span><br><span class="line">         paramUserInfoDto.append(paramString1);</span><br><span class="line">       &#125;</span><br><span class="line">       paramObject = (BaseModel)paramb.b(paramUserInfoDto.toString());</span><br><span class="line">       return (T)paramObject;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>先记录这些，后续有进展在继续</p>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>想实现一个支持多渠道的小说App,因此对该小说App进行分析获取它的接口调用方式<br>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -223,7 +281,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/pag飞卢小说App破解/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/27/飞卢小说App破解/">展开全文 >></a>
         </p>
       
 
@@ -273,20 +331,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -409,7 +459,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android,静态检查</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">破解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">静态检查</a>
               </li>
             
             <div class="clearfix"></div>
